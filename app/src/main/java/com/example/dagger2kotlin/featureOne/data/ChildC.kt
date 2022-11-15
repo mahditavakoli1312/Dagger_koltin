@@ -1,5 +1,7 @@
 package com.example.dagger2.feature.featureOne.data
 
-class ChildC {
-    val name = "C"
+import android.content.Context
+
+class ChildC (val context:Context){
+    val name = "C ${context}"
 }
