@@ -1,14 +1,11 @@
 package com.example.dagger2kotlin
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.dagger2.feature.featureOne.data.ChildB
-import com.example.dagger2.feature.featureOne.data.ChildC
+import androidx.appcompat.app.AppCompatActivity
 import com.example.dagger2.feature.featureOne.data.ParentA
 import com.example.dagger2.feature.featureOne.di.DaggerFeatureOneComponent
-import com.example.dagger2.feature.featureOne.di.FeatureOneModules
 import javax.inject.Inject
 
 private const val TAG = "MainActivity"
