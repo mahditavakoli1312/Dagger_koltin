@@ -7,7 +7,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class FeatureOneModules {
+object FeatureOneModules {
 
     @Provides
     fun provideParentA(childB: ChildB): ParentA = ParentA(childB)

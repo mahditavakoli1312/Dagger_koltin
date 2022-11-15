@@ -12,7 +12,6 @@ interface FeatureOneComponent {
     @Component.Factory
     interface Factory {
         fun create(
-            featureOneModules: FeatureOneModules
         ): FeatureOneComponent
     }
 }

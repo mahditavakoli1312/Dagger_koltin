@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
         super.onAttachedToWindow()
 
         DaggerFeatureOneComponent.factory().create(
-            FeatureOneModules()
         ).inject(this)
 
         Log.d(TAG, "onCreate: ${parentA.name}")
