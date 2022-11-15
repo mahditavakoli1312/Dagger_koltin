@@ -1,5 +1,6 @@
 package com.example.dagger2kotlin
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,11 +16,14 @@ private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var parentA: ParentA
-    override fun onAttachedToWindow() {
-        super.onAttachedToWindow()
+
+    // in fragment onAttach
+    // in Activity attachBaseContext
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(newBase)
 
         DaggerFeatureOneComponent.factory().create(
-            FeatureOneModules()
+            context = newBase!!
         ).inject(this)
 
         Log.d(TAG, "onCreate: ${parentA.name}")
