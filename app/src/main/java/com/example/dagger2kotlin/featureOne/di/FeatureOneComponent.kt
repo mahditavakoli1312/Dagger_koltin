@@ -4,8 +4,15 @@ import com.example.dagger2kotlin.MainActivity
 import dagger.Component
 
 @Component(
-    modules =[FeatureOneModules::class]
+    modules = [FeatureOneModules::class]
 )
 interface FeatureOneComponent {
     fun inject(mainActivity: MainActivity)
+
+    @Component.Factory
+    interface Factory {
+        fun create(
+            featureOneModules: FeatureOneModules
+        ): FeatureOneComponent
+    }
 }
